@@ -152,4 +152,4 @@ $site = $stmt->fetch(PDO::FETCH_ASSOC);
 <hr>
 <a href="regex.php?slug=<?php echo $site['slug'] ?>">Regex</a>
 <hr>
-<a href="site.php">Site</a> | <a href="bookmark.php">Bookmark</a> | <a href="note.php">Note</a> | <a href="stories.php">Stories</a> | <a href="size_database.php">Size</a> | <a href="info_get.php">info_set</a>
+<a href="site.php">Site</a> | <a href="bookmark.php">Bookmark</a> | <a href="note.php">Note</a> | <a href="stories.php">Stories</a> | <a href="size_database.php">Size</a> | <a href="info_set.php">info_set</a>
