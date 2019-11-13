@@ -1,5 +1,5 @@
 <?php
 
-$db = new PDO("mysql:host=localhost;charset=utf8;dbname=id11466262_haggstrom", "id11466262_haggstrom", "123456");
+$db = new PDO("mysql:host=w29ifufy55ljjmzq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;charset=utf8;dbname=fholksevs4yqxpbg", "xeiyjyiutd1geuch", "izvlfumonqatx3oq");
 
 ?>
