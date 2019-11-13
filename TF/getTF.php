@@ -18,6 +18,9 @@ $tieude = strip_tags($title[1]);
 $tieude = preg_replace('/chương 0+(\d+)/iu', 'Chương $1', $tieude);
 $noidung = $content[1];
 
+$noidung = str_replace("<em>*Chương này có nội dung ảnh, nếu bạn không thấy nội dung chương, vui lòng bật chế độ hiện hình ảnh của trình duyệt để đọc.</em>", "", $noidung);
+
+$noidung = preg_replace('#<.*?img.*?>#is', '', $noidung);
 $noidung = preg_replace('#<a(.*?)</a>#is', '', $noidung);
 $noidung = preg_replace('#<script(.*?)</script>#is', '', $noidung);
 $noidung = preg_replace('#<style(.*?)</style>#is', '', $noidung);
