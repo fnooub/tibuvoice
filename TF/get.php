@@ -19,8 +19,6 @@ preg_match_all('#</a> <a href="(.*?)"#is', $links[1], $lists);
 
 $noidung = multi_curl($lists[1]);
 
-$data = json_decode(file_get_contents("../info_get.txt"));
-
 echo "hoangnamvoice<br>➥<br>➥<br>➥<br>➥<br>➥<br>➥<br>➥<br>";
 echo "Tác phẩm: ";
 echo $data[0];
