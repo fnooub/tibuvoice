@@ -188,6 +188,7 @@ function loc($word)
 	$word = preg_replace('/~/', '-', $word);
 	$word = preg_replace('/\*/', '', $word);
 	$word = preg_replace('/ +(\.|\?|!|,)/', '$1', $word);
+	$word = preg_replace('/\bh(a|u)\b(?: +\bh(a|u)\b)+/i', 'h$1 h$1', $word);
 	// thay the
 	$word = str_replace('"..."', 'im lặng!', $word);
 	return $word;
