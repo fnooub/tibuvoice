@@ -25,6 +25,6 @@ foreach ($lists[2] as $key => $value) {
 <style type="text/css">
 a {text-decoration: none;}
 </style>
-<?php echo implode('<br>', $list) ?>
+<?php echo implode('<hr>', $list) ?>
 <hr>
 <a href="index.php?page=<?php echo $page-1 ?>">Trang truoc</a> - <a href="index.php?page=<?php echo $page+1 ?>">Trang sau</a>
