@@ -27,4 +27,4 @@ a {text-decoration: none;}
 </style>
 <?php echo implode('<br>', $list) ?>
 <hr>
-<a href="top.php?page=<?php echo $page-1 ?>">Trang truoc</a> - <a href="top.php?page=<?php echo $page+1 ?>">Trang sau</a>
+<a href="index.php?page=<?php echo $page-1 ?>">Trang truoc</a> - <a href="index.php?page=<?php echo $page+1 ?>">Trang sau</a>
