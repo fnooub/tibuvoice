@@ -23,10 +23,6 @@ for ($i=0; $i < count($ds[1]); $i++) {
 	$urls[] = preg_replace('/.*novel\/(.*?)\/(.*?)\.html.*/', 'chap.php?id_truyen=$1&id_chuong=$2', urldecode($ds[1][$i]));
 }
 
-foreach ($ds[2] as $key => $value) {
-	$list[] = '<a href="'.$urls[$key].'">'.$value.'</a>';
-}
-
 ?>
 <title><?php echo $tit[1] ?></title>
 <meta charset="UTF-8">
@@ -37,4 +33,8 @@ a {text-decoration: none;}
 <h1><?php echo $tit[1] ?></h1>
 <p><?php echo $mota[1] ?></p>
 <hr>
-<?php echo implode('<br>', $list) ?>
+<?php
+foreach ($ds[2] as $key => $value) {
+	echo '<p><a href="'.$urls[$key].'">'.$value.'</a></p>';
+}
+?>
