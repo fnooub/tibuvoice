@@ -23,6 +23,22 @@ for ($i=0; $i < count($ds[1]); $i++) {
 	$urls[] = preg_replace('/.*novel\/(.*?)\/(.*?)\.html.*/', 'chap.php?id_truyen=$1&id_chuong=$2', urldecode($ds[1][$i]));
 }
 
+if (isset($_GET['download'])) {
+	for ($i=0; $i < count($urls); $i++) { 
+		$urls2[] = 'http://localhost/Tusach/rourouwu_grab/test/'.str_replace('chap.php', 'chap_txt.php', $urls[$i]);
+	}
+	if (file_exists("download/$id_truyen.txt")) {
+		unlink("download/$id_truyen.txt");
+	}
+	foreach ($urls2 as $url2) {
+		$file = fopen("download/$id_truyen.txt", "a+");
+		fwrite($file, single_curl($url2));
+		fclose($file);
+	}
+	header('Location: download.php?id=' . $id_truyen);
+	exit;
+}
+
 ?>
 <title><?php echo $tit[1] ?></title>
 <meta charset="UTF-8">
@@ -32,6 +48,7 @@ a {text-decoration: none;}
 </style>
 <h1><?php echo $tit[1] ?></h1>
 <p><?php echo $mota[1] ?></p>
+<a href="read.php?id_truyen=<?php echo $id_truyen ?>&download">Download TXT</a>
 <hr>
 <?php
 foreach ($ds[2] as $key => $value) {
