@@ -15,5 +15,5 @@ preg_match('#<!--go-->(.*?)<!--over-->#is', $single_curl, $nd);
 
 echo $tit[1];
 echo "\n\n";
-echo preg_replace('#(<br */?>\s*)+#i', "\n\n", strip_tags('<br>', $nd[1]));
+echo preg_replace('#(<br */?>\s*)+#i', "\n\n", $nd[1]);
 echo "\n---o0o---\n\n";

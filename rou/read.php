@@ -25,7 +25,7 @@ for ($i=0; $i < count($ds[1]); $i++) {
 
 if (isset($_GET['download'])) {
 	for ($i=0; $i < count($urls); $i++) { 
-		$urls2[] = 'http://localhost/Tusach/rourouwu_grab/test/'.str_replace('chap.php', 'chap_txt.php', $urls[$i]);
+		$urls2[] = 'http://'.$_SERVER['SERVER_NAME'].'/rou/'.str_replace('chap.php', 'chap_txt.php', $urls[$i]);
 	}
 	if (file_exists("download/$id_truyen.txt")) {
 		unlink("download/$id_truyen.txt");
