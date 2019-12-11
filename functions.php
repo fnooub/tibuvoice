@@ -185,11 +185,18 @@ function loc($word)
 	$word = preg_replace('/,(?:\s*,)+/', ',', $word);
 	$word = preg_replace('/-(?:\s*-)+/', '', $word);
 	$word = preg_replace('/-*o\s*(0|O)\s*o-*/', '...', $word);
-	$word = preg_replace('/~/', '-', $word);
-	$word = preg_replace('/\*/', '', $word);
+	$word = str_replace('~', '-', $word);
+	$word = str_replace('*', '', $word);
+	$word = str_replace('#', '', $word);
+	$word = str_replace('^', '', $word);
+	$word = str_replace('@', '', $word);
+	// ky tu
 	$word = preg_replace('/ +(\.|\?|!|,)/', '$1', $word);
-	$word = preg_replace('/\bh(a|u)\b(?: +\bh(a|u)\b)+/i', 'h$1 h$1', $word);
+	$word = preg_replace('/(\.|,|!|\?) (\.|,|!|\?)/', '$2', $word);
+	$word = preg_replace('/" +\.+/', '"', $word);
+	$word = preg_replace('/(\d+)\. (\d{3})/', '$1$2', $word);
 	// thay the
+	$word = preg_replace('/\bh(a|u)\b(?: +\bh(a|u)\b)+/i', 'h$1 h$1', $word);
 	$word = str_replace('"..."', 'im lặng!', $word);
 	return $word;
 }
