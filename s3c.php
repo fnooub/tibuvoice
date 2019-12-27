@@ -43,6 +43,17 @@ if (isset($link)) {
 	exit;
 }
 
+function get_dom($nd, $bd, $kt, $all = false) {
+	$bd = preg_quote($bd, '/');
+	$kt = preg_quote($kt, '/');
+	if ($all) {
+		preg_match_all('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
+	} else {
+		preg_match('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
+	}
+	return $matches[1];
+}
+
 ?>
 <form action="" method="get">
 	<input type="text" name="link">
