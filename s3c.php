@@ -25,6 +25,9 @@ if (isset($link)) {
 			$nd = strip_tags($nd, '<p><br>');
 
 			$nd = preg_replace('/truyensex\.tv/i', 'truyện sex', $nd);
+
+			$nd = loc($nd);
+
 			$noidung[] = $nd;
 		}
 
@@ -38,21 +41,11 @@ if (isset($link)) {
 			$nd = strip_tags($nd, '<p><br>');
 
 			$nd = preg_replace('/truyensex\.tv/i', 'truyện sex', $nd);
-			echo $nd;
+			echo loc($nd);
 	}
 	exit;
 }
 
-function get_dom($nd, $bd, $kt, $all = false) {
-	$bd = preg_quote($bd, '/');
-	$kt = preg_quote($kt, '/');
-	if ($all) {
-		preg_match_all('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
-	} else {
-		preg_match('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
-	}
-	return $matches[1];
-}
 
 ?>
 <form action="" method="get">

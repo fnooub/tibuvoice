@@ -48,6 +48,18 @@ function multi_curl($links){
 
 }
 
+// dom
+function get_dom($nd, $bd, $kt, $all = false) {
+	$bd = preg_quote($bd, '/');
+	$kt = preg_quote($kt, '/');
+	if ($all) {
+		preg_match_all('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
+	} else {
+		preg_match('/'.$bd.'(.*?)'.$kt.'/is', $nd, $matches);
+	}
+	return $matches[1];
+}
+
 // lọc thẻ p vào nội dung văn bản
 function nl2p($string, $nl2br = true)
 {
